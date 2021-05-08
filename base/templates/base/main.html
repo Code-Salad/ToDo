@@ -8,15 +8,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300&family=Patrick+Hand&family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+        
     <style>
         body{
             background-color:#FAFAFA;
-            font-family: 'Jost', sans-serif;
+            font-family: 'Itim', cursive;
             padding-top:50px;
         }
 
         h1,h2,h3,h4,h5,h6{
-            font-family: 'Jost', sans-serif;
+            font-family: 'Raleway', sans-serif;
         }
         a,p{
             color:#4B5156;
@@ -25,7 +26,7 @@
         .container{
             max-width:550px;
             margin:auto;
-            background-color:#FFF
+            background-color:#fff;
             -webkit-box-shadow:2px 2px 13px -4px rgba(0,0,0,0.21);
             box-shadow:2px 2px 13px -4px rgba(0,0,0,0.21);
         }
@@ -36,7 +37,7 @@
             color:#fff;
             padding:10px;
             border-radius:5px 5px 0 0;
-            background:linear-gradient(90deg,#EEA390 0%,#EB796F 43%,#EB796F 100%);
+            background:linear-gradient(90deg,#EB796F 0%,#eb796fe1 43%,#f09680ec 100%);
         }
 
         .header-bar a{
@@ -48,13 +49,15 @@
             display:flex;
             justify-content:space-between;
             align-items:center;
-            padding:20px;
-            background-color:#fff
+            padding:7px;
+            background-color:#fff;
             border-top:1px solid rgb(226,226,226);
+            overflow:hidden;
         }
 
         .task-title{
             display:flex;
+            padding:20px;
         }
 
         .task-title a{
@@ -78,19 +81,45 @@
         }
 
         .delete-link{
-            text-decoration:none:
+            text-decoration:none;
             font-weight:900;
             color:#cf4949;
             font-size:22px;
             line-height:0;
+            padding: 20px 0px;
         }
 
-        #search-add-wrapper{
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-            padding:10px;
+        /*Handle Classes*/
+
+        .handle {
+            display: inline-block;
+            padding: 20px 16px;
+            cursor: grab;
+            user-select: none;
         }
+
+        .handle:after,
+        .handle:before {
+            display: block;
+            content: "";
+        }
+
+        .handle:active,
+        .handle:active:before,
+        .handle:active:after {
+            cursor: grabbing;
+        }
+
+        .dropArea {
+            background-color: #f1f2f6;
+            color: black;
+            border: #ced6e0 1px solid;
+        }
+
+        .selectedTask {
+            opacity: 0.6;
+        }
+
 
         #add-link{
             color:#EB796F;
@@ -99,9 +128,16 @@
             text-shadow:1px 1px #81413b;
         }
 
-        input=[type=text],
+        #search-add-wrapper{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:20px;
+        }
+
+        input[type=text],
         input[type=password],
-        textarea{
+        textarea {
             border:1px solid #EB796F;
             border-radius:5px;
             padding:10px;
@@ -135,6 +171,6 @@
             {% block content %}
 
             {% endblock content%}
-    
+        </div>
     </body>
 </html>
