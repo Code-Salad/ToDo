@@ -1,1 +1,1 @@
-web: gunicorn todo_list.wsgi
+eb: gunicorn --chdir myproject myproject.wsgi:application --log-file -
